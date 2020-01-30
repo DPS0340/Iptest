@@ -8,15 +8,15 @@ const logDir = __dirname + "/log"
 const logtxt = logDir + "/log.txt"
 
 if (!fs.existsSync(logDir)) {
-  fs.mkdirSync(Dir);
+  fs.mkdirSync(logDir);
 }
 
 app.use(function (req, res, next) {
   const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress
-  console.log(ip)
   const now = new Date().toISOString().
   replace(/T/, ' ').
   replace(/\..+/, '')
+  console.log(`${now}: ${ip}\n`)
   fs.appendFileSync(logtxt, `${now}: ${ip}\n`)
   next()
 })
