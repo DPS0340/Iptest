@@ -11,7 +11,7 @@ app.use(function (req, res, next) {
 
 const port = 4500
  
-app.use('/img', express.static(__dirname + '/img'));
+app.use('/img', express.static(__dirname + '/img'))
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/test.html')
