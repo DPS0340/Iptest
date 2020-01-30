@@ -16,7 +16,7 @@ app.use(function (req, res, next) {
   const now = new Date().toISOString().
   replace(/T/, ' ').
   replace(/\..+/, '')
-  console.log(`${now}: ${ip}\n`)
+  console.log(`${now}: ${ip}`)
   fs.appendFileSync(logtxt, `${now}: ${ip}\n`)
   next()
 })
