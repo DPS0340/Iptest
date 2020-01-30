@@ -1,4 +1,3 @@
-const { createCanvas, loadImage } = require('canvas')
 const fs = require('fs')
 const stream = require('stream')
 const express = require('express')
