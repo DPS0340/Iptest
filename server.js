@@ -28,7 +28,7 @@ const port = 4500
 app.use('/img', express.static(__dirname + '/img'))
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/test.html')
+  res.render(__dirname + '/test.html')
 })
  
 app.listen(port)
